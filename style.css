@@ -1,0 +1,20 @@
+.lorem{
+    color: blue;
+}
+
+.Enter{
+    background-color: aqua;
+    color: black;
+    font-weight: 1000;
+    font-family: Arial, Helvetica, sans-serif;
+    border: ;
+    border-radius: 15ch;
+    block-size: auto;
+    width: 30ch;
+    display: block;
+    margin: auto;
+
+}
+.img-box {
+  text-align: center;
+}
