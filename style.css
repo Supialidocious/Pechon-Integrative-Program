@@ -1,20 +1,333 @@
-.lorem{
-    color: blue;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.Enter{
-    background-color: aqua;
-    color: black;
-    font-weight: 1000;
-    font-family: Arial, Helvetica, sans-serif;
-    border: ;
-    border-radius: 15ch;
-    block-size: auto;
-    width: 30ch;
+body {
+    font-family: 'Arial', sans-serif;
+    background: #000000;
+    color: white;
+    line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Main F1 Logo */
+.main-logo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: contain;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+/* Hero Buttons */
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.hero-btn {
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.login-btn {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    backdrop-filter: blur(10px);
+}
+
+.login-btn:hover {
+    background: rgba(255,255,255,0.3);
+    transform: translateY(-3px);
+}
+
+.signup-btn {
+    background: linear-gradient(45deg, #ff1d25, #00a8e8);
+    color: white;
+}
+
+.signup-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(255,29,37,0.4);
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    max-width: 600px;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+/* Login Overlay */
+.login-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.login-container {
+    background: #1a1a1a;
+    padding: 2.5rem;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    color: #ccc;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.f1-logo-small {
+    width: 70px;
+    height: 70px;
+    background: white;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    position: relative;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
+.f1-logo-small::before {
+    content: 'F1';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ff1d25;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.login-container h2 {
+    margin-bottom: 1.5rem;
+    color: #ff1d25;
+    font-size: 2rem;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.login-form input {
+    padding: 1rem;
+    background: #2a2a2a;
+    border: 2px solid #333;
+    border-radius: 12px;
+    color: white;
+    font-size: 1rem;
+}
+
+.login-form input:focus {
+    outline: none;
+    border-color: #ff1d25;
+    box-shadow: 0 0 10px rgba(255,29,37,0.3);
+}
+
+.login-form button {
+    padding: 1.1rem;
+    background: linear-gradient(45deg, #ff1d25, #00a8e8);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255,29,37,0.4);
+}
+
+.switch-auth {
+    color: #ccc;
+}
+
+.switch-auth span {
+    color: #ff1d25;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.switch-auth span:hover {
+    text-decoration: underline;
+}
+
+/* Teams Section */
+.teams {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: white;
+}
+
+.teams-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.team-card {
+    background: #1a1a1a;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    transition: all 0.3s ease;
+    border-top: 4px solid;
+    position: relative;
+    overflow: hidden;
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.7);
+}
+
+.red-bull { border-top-color: #1e2a44; }
+.ferrari { border-top-color: #dc2626; }
+.mclaren { border-top-color: #ff6200; }
+.mercedes { border-top-color: #00a8e8; }
+
+.team-image {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1rem;
+    border-radius: 12px;
+    object-fit: contain;
+    border: 3px solid;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    transition: all 0.3s ease;
+    background: white;
+    padding: 8px;
+}
+
+.red-bull .team-image { border-color: #1e2a44; }
+.ferrari .team-image { border-color: #dc2626; }
+.mclaren .team-image { border-color: #ff6200; }
+.mercedes .team-image { border-color: #00a8e8; }
+
+.team-name {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.team-driver {
+    font-size: 1.1rem;
+    color: #cccccc;
+    margin-bottom: 1rem;
+}
+
+.team-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
     display: block;
-    margin: auto;
-
 }
-.img-box {
-  text-align: center;
+
+.footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .teams-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .main-logo {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .team-image {
+        width: 100px;
+        height: 100px;
+    }
 }

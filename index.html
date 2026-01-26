@@ -3,10 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>F1 Teams 2026</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, ullam laborum nam labore incidunt iusto recusandae assumenda veniam dolorem suscipit voluptates soluta illum optio laudantium quae, quaerat at reprehenderit possimus?</p>
-    <button type="button" class="Enter">Enter</button>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="f1-logo">
+            <img src="images/New Formula 1 logo vector Free Download.jpg" alt="F1 Logo" class="main-logo">
+        </div>
+        <h1>F1 Teams 2026</h1>
+        <p>Experience the pinnacle of motorsport engineering and speed. 
+           Discover the teams competing for championship glory.</p>
+        <div class="hero-buttons">
+            <button class="hero-btn login-btn" onclick="showLogin()">Login</button>
+            <button class="hero-btn signup-btn" onclick="showSignup()">Sign Up</button>
+        </div>
+    </section>
+
+    <!-- Login Overlay -->
+    <div class="login-overlay" id="loginOverlay">
+        <div class="login-container">
+            <button class="close-btn" onclick="hideLogin()">&times;</button>
+            <div class="f1-logo-small"></div>
+            <h2>Login</h2>
+            <form class="login-form">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Sign In</button>
+            </form>
+            <p class="switch-auth">Need an account? <span onclick="switchToSignup()">Sign Up</span></p>
+        </div>
+    </div>
+
+    <!-- Signup Overlay (Hidden Initially) -->
+    <div class="login-overlay" id="signupOverlay" style="display: none;">
+        <div class="login-container">
+            <button class="close-btn" onclick="hideSignup()">&times;</button>
+            <div class="f1-logo-small"></div>
+            <h2>Create Account</h2>
+            <form class="login-form">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+            <p class="switch-auth">Have an account? <span onclick="switchToLogin()">Login</span></p>
+        </div>
+    </div>
+
+    <!-- Teams Section -->
+    <section class="teams">
+        <h2 class="section-title">CURRENT CONSTRUCTORS</h2>
+        <div class="teams-grid">
+            <!-- Red Bull -->
+            <div class="team-card red-bull">
+                <img src="images/Oracle Red Bull Racing.jpg" alt="Red Bull Racing" class="team-image">
+                <h3 class="team-name">Red Bull Racing</h3>
+                <p class="team-driver">Max Verstappen | Sergio Pérez</p>
+                <div class="team-stats">
+                    <div class="stat">
+                        <span class="stat-number">4</span>
+                        Championships
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">385</span>
+                        Points
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ferrari -->
+            <div class="team-card ferrari">
+                <img src="images/ferrari-logo.jpg" alt="Scuderia Ferrari" class="team-image">
+                <h3 class="team-name">Scuderia Ferrari</h3>
+                <p class="team-driver">Charles Leclerc | Carlos Sainz</p>
+                <div class="team-stats">
+                    <div class="stat">
+                        <span class="stat-number">16</span>
+                        Championships
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">342</span>
+                        Points
+                    </div>
+                </div>
+            </div>
+
+            <!-- McLaren -->
+            <div class="team-card mclaren">
+                <img src="images/Mclaren Formula 1 Team Logo.jpg" alt="McLaren" class="team-image">
+                <h3 class="team-name">McLaren</h3>
+                <p class="team-driver">Lando Norris | Oscar Piastri</p>
+                <div class="team-stats">
+                    <div class="stat">
+                        <span class="stat-number">8</span>
+                        Championships
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">298</span>
+                        Points
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mercedes -->
+            <div class="team-card mercedes">
+                <img src="images/Mecedes AMG Petronas F1 Team.jpg" alt="Mercedes-AMG" class="team-image">
+                <h3 class="team-name">Mercedes-AMG</h3>
+                <p class="team-driver">George Russell | Lewis Hamilton</p>
+                <div class="team-stats">
+                    <div class="stat">
+                        <span class="stat-number">8</span>
+                        Championships
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">275</span>
+                        Points
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>F1 Teams Overview | Season 2026 | Designed for Speed</p>
+    </footer>
+
+    <script>
+        // Login/Signup Functions
+        function showLogin() {
+            document.getElementById('loginOverlay').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function hideLogin() {
+            document.getElementById('loginOverlay').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function showSignup() {
+            document.getElementById('loginOverlay').style.display = 'none';
+            document.getElementById('signupOverlay').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function hideSignup() {
+            document.getElementById('signupOverlay').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function switchToSignup() {
+            document.getElementById('loginOverlay').style.display = 'none';
+            document.getElementById('signupOverlay').style.display = 'flex';
+        }
+
+        function switchToLogin() {
+            document.getElementById('signupOverlay').style.display = 'none';
+            document.getElementById('loginOverlay').style.display = 'flex';
+        }
+
+        // Close on overlay click
+        document.getElementById('loginOverlay').addEventListener('click', function(e) {
+            if (e.target === this) hideLogin();
+        });
+
+        document.getElementById('signupOverlay').addEventListener('click', function(e) {
+            if (e.target === this) hideSignup();
+        });
+    </script>
 </body>
 </html>

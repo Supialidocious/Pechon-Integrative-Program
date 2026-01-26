@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Teams - Sign Up</title>
+    <link rel="stylesheet" href="auth-style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- F1 Logo Header -->
+        <div class="logo-header">
+            <div class="f1-logo">
+                <div class="f1-logo-circle"></div>
+            </div>
+            <h1>Join F1 Teams</h1>
+            <p>Create your account for 2026 season access</p>
+        </div>
+
+        <!-- Sign Up Form -->
+        <form class="auth-form" id="signupForm">
+            <div class="input-group">
+                <input type="text" id="signupName" required>
+                <label for="signupName">Full Name</label>
+            </div>
+            
+            <div class="input-group">
+                <input type="email" id="signupEmail" required>
+                <label for="signupEmail">Email Address</label>
+            </div>
+            
+            <div class="input-group">
+                <input type="password" id="signupPassword" required>
+                <label for="signupPassword">Password</label>
+            </div>
+
+            <div class="input-group">
+                <input type="password" id="signupConfirm" required>
+                <label for="signupConfirm">Confirm Password</label>
+            </div>
+
+            <button type="submit" class="auth-btn primary">Create Account</button>
+        </form>
+
+        <div class="auth-links">
+            <label class="checkbox-group">
+                <input type="checkbox" required>
+                <span class="checkmark"></span>
+                I agree to Terms & Conditions
+            </label>
+            <p>Already have an account? <a href="login.html">Sign In</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Simple form validation
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            const password = document.getElementById('signupPassword').value;
+            const confirm = document.getElementById('signupConfirm').value;
+            
+            if (password !== confirm) {
+                e.preventDefault();
+                alert('Passwords do not match!');
+            }
+        });
+    </script>
+</body>
+</html>
