@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <nav class="dashboard-nav">
+        <a href="profile.html" class="nav-link profile">👤 Profile</a>
+        <a href="profile.html" class="nav-link dashboard">📊 Dashboard</a>
+        <a href="#loginOverlay" class="nav-link login-trigger">🔐 Login</a>
+    </nav>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="f1-logo">
@@ -14,10 +21,10 @@
         </div>
         <h1>F1 Teams 2026</h1>
         <p>Experience the pinnacle of motorsport engineering and speed. 
-           Discover the teams competing for championship glory.</p>
+             Discover the teams competing for championship glory.</p>
         <div class="hero-buttons">
-            <button class="hero-btn login-btn" onclick="showLogin()">Login</button>
-            <button class="hero-btn signup-btn" onclick="showSignup()">Sign Up</button>
+            <a href="profile.html" class="hero-btn login-btn">Go to Profile</a>
+            <a href="profile.html" class="hero-btn signup-btn">View Dashboard</a>
         </div>
     </section>
 
@@ -132,7 +139,7 @@
     </footer>
 
     <script>
-        // Login/Signup Functions
+        // Login/Signup Functions (kept for modals)
         function showLogin() {
             document.getElementById('loginOverlay').style.display = 'flex';
             document.body.style.overflow = 'hidden';
