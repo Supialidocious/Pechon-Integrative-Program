@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>F1 Teams - Sign Up</title>
-    <link rel="stylesheet" href="auth-style.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <div class="container">
         <!-- F1 Logo Header -->
         <div class="logo-header">
             <div class="f1-logo">
+            
                 <div class="f1-logo-circle"></div>
             </div>
             <h1>Join F1 Teams</h1>
@@ -52,17 +54,5 @@
         </div>
     </div>
 
-    <script>
-        // Simple form validation
-        document.getElementById('signupForm').addEventListener('submit', function(e) {
-            const password = document.getElementById('signupPassword').value;
-            const confirm = document.getElementById('signupConfirm').value;
-            
-            if (password !== confirm) {
-                e.preventDefault();
-                alert('Passwords do not match!');
-            }
-        });
-    </script>
 </body>
 </html>

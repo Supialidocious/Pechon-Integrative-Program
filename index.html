@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>F1 Teams 2026</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -138,47 +139,5 @@
         <p>F1 Teams Overview | Season 2026 | Designed for Speed</p>
     </footer>
 
-    <script>
-        // Login/Signup Functions (kept for modals)
-        function showLogin() {
-            document.getElementById('loginOverlay').style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        }
-
-        function hideLogin() {
-            document.getElementById('loginOverlay').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        function showSignup() {
-            document.getElementById('loginOverlay').style.display = 'none';
-            document.getElementById('signupOverlay').style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        }
-
-        function hideSignup() {
-            document.getElementById('signupOverlay').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        function switchToSignup() {
-            document.getElementById('loginOverlay').style.display = 'none';
-            document.getElementById('signupOverlay').style.display = 'flex';
-        }
-
-        function switchToLogin() {
-            document.getElementById('signupOverlay').style.display = 'none';
-            document.getElementById('loginOverlay').style.display = 'flex';
-        }
-
-        // Close on overlay click
-        document.getElementById('loginOverlay').addEventListener('click', function(e) {
-            if (e.target === this) hideLogin();
-        });
-
-        document.getElementById('signupOverlay').addEventListener('click', function(e) {
-            if (e.target === this) hideSignup();
-        });
-    </script>
 </body>
 </html>
